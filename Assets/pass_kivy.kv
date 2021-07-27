@@ -1,0 +1,328 @@
+<Registry>
+    register_user: register_user
+    register_pass: register_pass
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 236/255, 193/255, 156/255, 1
+            Rectangle:
+                pos: self.pos
+                size: root.width, root.height
+            Color:
+                rgba: 30/255, 132/255, 127/255, 1
+            Rectangle:
+                pos: self.pos
+                size: root.width/3, root.height
+
+
+
+        Image:
+            source: 'Assets/Kurt.png'
+            size_hint_y: None
+            size_hint_x: None
+            width: root.width * 0.09
+            height: root.height * 0.09
+            pos_hint: {'x': -0.015, 'y': 0}
+
+        Label:
+            text: 'Create your account:'
+            color: 255, 255, 255, 1
+            text_size: self.size
+            pos_hint: {'x': 0.34, 'y': 0.78}
+            font_size: root.height * 0.05
+
+        Label:
+            text: 'Password Haven'
+            color: 255, 255, 255, 1
+            text_size: root.width/3.6, None
+            size: self.size
+            pos_hint: {'x': -0.35, 'y': 0.2}
+            font_size: (root.height + root.width) * 0.022
+
+        Label:
+            text: 'Powered by: TrackR Studios'
+            color: 255, 255, 255, 1
+            text_size: self.size
+            pos_hint: {'x': -0.28, 'y': -0.45}
+            font_size: (root.height + root.width) * 0.01
+            text_size: root.width/3.6, None
+
+        Label:
+            text: "A vault for your account's details. Obfuscated in a simple text file."
+            color: 255, 255, 255, 1
+            text_size: root.width/3.6, None
+            size: self.size
+            pos_hint: {'x': -0.35, 'y': 0.1}
+            font_size: (root.height + root.width) * 0.015
+
+        TextInput:
+            id: register_user
+            size_hint: 0.6, 0.1
+            pos_hint: {'x': 0.35, 'y': 0.65}
+            font_size: root.height * 0.05
+
+        TextInput:
+            id: register_pass
+            size_hint: 0.6, 0.1
+            pos_hint: {'x': 0.35, 'y': 0.52}
+            font_size: root.height * 0.05
+            password: True
+
+        Button:
+            text: 'Register'
+            size_hint: 0.4, 0.1
+            pos_hint: {'x': 0.45, 'y': 0.35}
+            font_size: root.height * 0.05
+            background_color: 0, 0, 0, 1
+            on_release:
+                root.register()
+
+        Button:
+            text: 'Close'
+            size_hint: 0.2, 0.1
+            pos_hint: {'x': 0.79, 'y': 0.89}
+            font_size: root.height * 0.05
+            background_color: 0, 0, 0, 1
+            on_press:
+                app.stop()
+
+
+
+<MasterLogin>
+    user_field: user_field
+    pass_field: pass_field
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 236/255, 193/255, 156/255, 1
+            Rectangle:
+                pos: self.pos
+                size: root.width, root.height
+            Color:
+                rgba: 30/255, 132/255, 127/255, 1
+            Rectangle:
+                pos: self.pos
+                size: root.width/3, root.height
+
+        Image:
+            source: 'Assets/Kurt.png'
+            size_hint_y: None
+            size_hint_x: None
+            width: root.width * 0.09
+            height: root.height * 0.09
+            pos_hint: {'x': -0.015, 'y': 0}
+
+        Label:
+            text: 'Login'
+            color: 255, 255, 255, 1
+            text_size: self.size
+            pos_hint: {'x': 0.34, 'y': 0.78}
+            font_size: root.height * 0.05
+
+        Label:
+            text: 'Password Haven'
+            color: 255, 255, 255, 1
+            text_size: root.width/3.6, None
+            size: self.size
+            pos_hint: {'x': -0.35, 'y': 0.2}
+            font_size: (root.height + root.width) * 0.022
+
+        Label:
+            text: 'Powered by: TrackR Studios'
+            color: 255, 255, 255, 1
+            text_size: self.size
+            pos_hint: {'x': -0.28, 'y': -0.45}
+            font_size: (root.height + root.width) * 0.01
+            text_size: root.width/3.6, None
+
+        Label:
+            text: "A vault for your account's details. Obfuscated in a simple text file."
+            color: 255, 255, 255, 1
+            text_size: root.width/3.6, None
+            size: self.size
+            pos_hint: {'x': -0.35, 'y': 0.1}
+            font_size: (root.height + root.width) * 0.015
+
+        TextInput:
+            id: user_field
+            size_hint: 0.6, 0.1
+            pos_hint: {'x': 0.35, 'y': 0.65}
+            font_size: root.height * 0.05
+
+        TextInput:
+            id: pass_field
+            size_hint: 0.6, 0.1
+            pos_hint: {'x': 0.35, 'y': 0.52}
+            font_size: root.height * 0.05
+            password: True
+
+        Button:
+            text: 'Login'
+            size_hint: 0.4, 0.1
+            pos_hint: {'x': 0.45, 'y': 0.4}
+            font_size: root.height * 0.05
+            background_color: 0, 0, 0, 1
+            on_press:
+                root.login()
+
+        Button:
+            text: 'Close'
+            size_hint: 0.2, 0.1
+            pos_hint: {'x': 0.79, 'y': 0.89}
+            font_size: root.height * 0.05
+            background_color: 0, 0, 0, 1
+            on_press:
+                app.stop()
+
+<AccountManagement>:
+    account_for: account_for
+    new_user: new_user
+    new_pass: new_pass
+    accounts_view: accounts_view
+    current_user: current_user
+    current_pass: current_pass
+    new_master_user: new_master_user
+    new_master_pass: new_master_pass
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 236/255, 193/255, 156/255, 1
+            Rectangle:
+                pos: self.pos
+                size: root.width, root.height
+        Button:
+            text: 'Back'
+            size_hint: 0.3, 0.04
+            pos_hint: {'x': 0.68, 'y': 0.95}
+            font_size: (root.height + root.width/2) * 0.02
+            background_color: 0, 0, 0, 1
+            on_press:
+                root.go_back()
+
+        TabbedPanel:
+            size_hint: .9, 0.97
+            pos_hint: {'x': 0.05, 'y': 0.03}
+            do_default_tab: False
+            tab_width: self.parent.width/6
+            tab_height:self.parent.height/20
+            background_color: 0.30, 1.32, 1.27, 1
+
+            TabbedPanelItem:
+                font_size: (root.height + root.width/2) * 0.02
+                text:'Accounts'
+                size: root.width, root.height
+                background_color: 0, 0, 0, 1
+                FloatLayout:
+                    ScrollView:
+                        id: accounts_view
+                        size: root.width, root.height
+                        do_scroll_x: False
+                        do_scroll_y: True
+                        pos_hint: {'x': 0, 'y': 0}
+
+            TabbedPanelItem:
+                font_size: (root.height + root.width/2) * 0.02
+                text:'Create'
+                size: root.width, root.height
+                background_color: 0, 0, 0, 1
+                GridLayout:
+                    cols: 1
+                    spacing: 30
+                    BoxLayout:
+                        orientation: 'vertical'
+                        Label:
+                            text: 'Creating account for: '
+                        TextInput:
+                            id: account_for
+                            size_hint: 0.7, 1
+                            pos_hint: {'x': 0.15, 'y': 0}
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        Label:
+                            text: 'Username: '
+                        BoxLayout:
+                            orientation: 'horizontal'
+                            size_hint: 0.8, 1
+                            pos_hint: {'x': 0.1, 'y': 0}
+                            TextInput:
+                                id: new_user
+                                size_hint: 0.9, 1
+
+                            Button:
+                                text: '...'
+                                size_hint: 0.1, 1
+                                background_color: 0, 0, 0, 1
+                                on_press: root.randomize_username()
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        Label:
+                            text: 'Password: '
+                        BoxLayout:
+                            orientation: 'horizontal'
+                            size_hint: 0.8, 1
+                            pos_hint: {'x': 0.1, 'y': 0}
+                            TextInput:
+                                id: new_pass
+                                size_hint: 0.9, 1
+
+                            Button:
+                                text: '...'
+                                size_hint: 0.1, 1
+                                background_color: 0, 0, 0, 1
+                                on_press: root.randomize_password()
+                    FloatLayout:
+                        Button:
+                            text: 'Add'
+                            pos_hint: {'x': 0.3, 'y': 0.1}
+                            size_hint: 0.4, 0.5
+                            font_size: root.height * 0.05
+                            background_color: 0, 0, 0, 1
+                            on_press: root.add_account()
+
+            TabbedPanelItem:
+                font_size: (root.height + root.width/2) * 0.02
+                text:'Settings'
+                size: root.width, root.height
+                background_color: 0, 0, 0, 1
+                FloatLayout:
+                    Label:
+                        text: 'Change username and password: '
+                        text_size: self.size
+                        pos_hint: {'x': 0.05, 'y': 0.93}
+                        halign: 'left'
+                        font_size: (root.height + root.width/2) * 0.015
+
+                    TextInput:
+                        id: current_user
+                        pos_hint: {'x': 0.05, 'y': 0.83}
+                        size_hint: 0.9, 0.1
+                    TextInput:
+                        id: current_pass
+                        pos_hint: {'x': 0.05, 'y': 0.73}
+                        size_hint: 0.9, 0.1
+
+                    Label:
+                        text: 'TO'
+                        text_size: self.size
+                        pos_hint: {'x': 0, 'y': 0.65}
+                        halign: 'center'
+                        font_size: root.height * 0.05
+
+                    TextInput:
+                        id: new_master_user
+                        pos_hint: {'x': 0.05, 'y': 0.53}
+                        size_hint: 0.9, 0.1
+                    TextInput:
+                        id: new_master_pass
+                        pos_hint: {'x': 0.05, 'y': 0.43}
+                        size_hint: 0.9, 0.1
+
+                    Button:
+                        text: 'Change'
+                        size_hint: 0.2, 0.1
+                        pos_hint: {'x': 0.4, 'y': 0.3}
+                        font_size: root.height * 0.05
+                        background_color: 0, 0, 0, 1
+                        on_press: root.change_password()
